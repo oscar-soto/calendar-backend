@@ -7,12 +7,9 @@ const app = express();
 // public folder
 app.use(express.static('public'));
 
-// Routers
-// app.get('/', (req, res) => {
-//   res.json({
-//     ok: true,
-//   });
-// });
+// Routes
+app.use('/api/auth', require('./routes/auth'))
+// TODO: CRUD: Eventos
 
 // listen request
 app.listen(process.env.PORT, () => {
