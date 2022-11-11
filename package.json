@@ -11,6 +11,6 @@
   "author": "Oscar Espinoza <oscarantonio.soto1998@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "nodemon": "^2.0.20"
+    "express": "^4.18.2"
   }
 }
