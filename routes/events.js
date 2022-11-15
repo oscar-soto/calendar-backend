@@ -25,19 +25,27 @@ router.get('/', getEvents);
 
 // create a new event
 router.post(
-  '/', 
+  '/',
   [
     check('title', 'El titulo es obligatorio').not().isEmpty(),
     check('start', 'Fecha de inicio es obligatoria').custom(isDate),
     check('start', 'Fecha de finalizacion es obligatoria').custom(isDate),
-    fieldValidation
-  ]
-  ,
+    fieldValidation,
+  ],
   createEvent
 );
 
 // Update a Event
-router.put('/:id', updateEvent);
+router.put(
+  '/:id',
+  [
+    check('title', 'El titulo es obligatorio').not().isEmpty(),
+    check('start', 'Fecha de inicio es obligatoria').custom(isDate),
+    check('start', 'Fecha de finalizacion es obligatoria').custom(isDate),
+    fieldValidation,
+  ],
+  updateEvent
+);
 
 // Delete a Event
 router.delete('/:id', deleteEvent);
