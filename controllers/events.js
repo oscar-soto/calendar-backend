@@ -1,6 +1,9 @@
 const { response } = require('express');
 
 const getEvents = async (req, res = response) => {
+  // Check Event
+  console.log(req.body)
+
   res.json({
     ok: true,
     msg: 'Get events',
