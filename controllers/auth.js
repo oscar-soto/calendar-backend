@@ -11,7 +11,7 @@ const newUser = async (req, res = response) => {
 
     // Email exists
     if (user) {
-      res.status(400).json({
+      return res.status(400).json({
         ok: false,
         msg: 'El usuario ya existe con ese correo',
       });
@@ -53,7 +53,7 @@ const loginUser = async (req, res = response) => {
 
     // Email exists
     if (!user) {
-      res.status(400).json({
+      return res.status(400).json({
         ok: false,
         msg: 'El usuario no existe con ese email',
       });
